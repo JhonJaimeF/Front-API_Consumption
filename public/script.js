@@ -1,5 +1,5 @@
 (() => {
-  fetch('http://localhost:3000/car')
+  fetch('http://158.247.122.111:3000/car')
       .then(response => response.json())
       .then(data => {
         console.log(data);
