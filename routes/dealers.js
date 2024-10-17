@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/dealer', async (req, res) => {
     try {
-        const response = await fetch('http://localhost:3000/dealer');
+        const response = await fetch('http://158.247.122.111:3000/car/dealer');
         const data = await response.json();
         res.json(data.data);
         console.log(data.data,);

@@ -38,7 +38,7 @@ fetch('./towns.json')
     .catch(err => console.log(err));
 
 (() => {
-    fetch('http://localhost:3000/dealer')
+    fetch('http://158.247.122.111:3000/dealer')
         .then(response => response.json())
         .then(data => {
             const dealers = data.data;
@@ -72,7 +72,7 @@ document.querySelector('#btnSend').addEventListener('click', (event) => {
     //console.log(data);
 
     
-    fetch(`http://localhost:3000/car/${idDealer}`, {
+    fetch(`http://158.247.122.111:3000/car/${idDealer}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
