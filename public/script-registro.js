@@ -89,6 +89,5 @@ document.querySelector('#btnSend').addEventListener('click', (event) => {
     })
     .then(res => alert("Datos guardados correctamente."))
     .catch(err => alert(`Error: ${err.message}`));
-    
-    
+
 });
