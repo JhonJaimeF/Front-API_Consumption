@@ -8,6 +8,7 @@
       .catch(err => console.log(err));
 })();
 
+
 function crearTarjetas(lista) {
   const container = document.getElementById("card-group");
   container.innerHTML = '';
@@ -39,3 +40,4 @@ function crearTarjetas(lista) {
     container.appendChild(col);
   });
 }
+
