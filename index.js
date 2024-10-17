@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import carsRouter from './routes/cars.js';
+import  cors from 'cors';
 
 dotenv.config();
 
@@ -14,7 +15,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('PORT', process.env.PORT || 2500);
-
+app.use(cors());
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, './views/index.html')));
 app.get('/coches', (req, res) => res.sendFile(path.join(__dirname, './views/coches.html')));
 
