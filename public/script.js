@@ -1,5 +1,5 @@
 (() => {
-  fetch('http://158.247.122.111:3000/car')
+  fetch('http://localhost:3000/car')
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -21,11 +21,7 @@ function crearTarjetas(lista) {
     card.className = 'card';
 
     card.innerHTML = `
-      <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marcador de posición: Capuchón de imagen" preserveAspectRatio="xMidYMid slice" focusable="false">
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#868e96"></rect>
-        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-      </svg>
+      <img class="card-img-top" src="${item.imag}" alt="Imagen del coche" width="100%" height="180" style="object-fit: cover;">
       <div class="card-body">
         <h5 class="card-title">${item.model}</h5>
         <p class="card-text">
