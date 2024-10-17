@@ -1,44 +1,38 @@
 let dataSearch = [];
 
-  document.getElementById('searchForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+document.getElementById('searchForm').addEventListener('submit', function (event) {
+  event.preventDefault();
 
-    const searchValue = document.getElementById('searchInput').value;
+  const searchValue = document.getElementById('searchInput').value;
 
-    console.log(searchValue);
+  if (searchValue <= 0) {
+    fetch('http://158.247.122.111:3000/car')
+        .then(response => response.json())
+        .then(data => {
+          dataSearch = data.data; // Ensure dataSearch is updated
+          crearTarjetas(dataSearch);
+        })
+        .catch(err => console.log(err));
+  } else {
+    fetch(`http://158.247.122.111:3000/car/model/${searchValue}`)
+        .then(response => response.json())
+        .then(data => {
+          dataSearch = data.data; // Ensure dataSearch is updated
+          crearTarjetas(dataSearch);
+        })
+        .catch(err => console.log(err));
+  }
+});
 
-    if(searchValue<=0) {
-      (() => {
-        fetch('http://158.247.122.111:3000/car')
-          .then(response => response.json())
-          .then(data => {
-
-            crearTarjetas(data.data);
-          })
-          .catch(err => console.log(err));
-      })();
-    }else{
-
-      fetch(`http://158.247.122.111:3000/car/model/${searchValue}`)
+(() => {
+  fetch('http://158.247.122.111:3000/car')
       .then(response => response.json())
       .then(data => {
-        dataSearch = data.data; 
+        dataSearch = data.data; // Ensure dataSearch is updated
         crearTarjetas(dataSearch);
       })
       .catch(err => console.log(err));
-
-    }
-  });
-  
-  (() => {
-    fetch('http://158.247.122.111:3000/car')
-      .then(response => response.json())
-      .then(data => {
-
-        crearTarjetas(data.data);
-      })
-      .catch(err => console.log(err));
-  })();
+})();
 
 function crearTarjetas(lista) {
   const container = document.getElementById("card-group");
@@ -81,6 +75,8 @@ function crearTarjetas(lista) {
 
 function handleEdit(event) {
   const carId = event.target.getAttribute('data-id');
+  console.log('Car ID:', carId); // Log the car ID
+  console.log('Data Search:', dataSearch); // Log the dataSearch array
   const car = dataSearch.find(item => item._id === carId);
 
   if (car) {
@@ -93,6 +89,8 @@ function handleEdit(event) {
 
     const editCarModal = new bootstrap.Modal(document.getElementById('editCarModal'));
     editCarModal.show();
+  } else {
+    console.error('Car not found');
   }
 }
 
@@ -151,4 +149,3 @@ function handleDelete(event) {
         .catch(err => alert(`Error: ${err.message}`));
   }
 }
-  
