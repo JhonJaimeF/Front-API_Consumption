@@ -33,6 +33,44 @@
     </div>
   </nav>
 
+  <!-- Modal -->
+  <div class="modal fade" id="editCarModal" tabindex="-1" aria-labelledby="editCarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editCarModalLabel">Editar Carro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editCarForm">
+            <input type="hidden" id="editCarId">
+            <div class="mb-3">
+              <label for="editModel" class="form-label">Modelo</label>
+              <input type="text" class="form-control" id="editModel">
+            </div>
+            <div class="mb-3">
+              <label for="editPlate" class="form-label">Placa</label>
+              <input type="text" class="form-control" id="editPlate">
+            </div>
+            <div class="mb-3">
+              <label for="editDepartment" class="form-label">Departamento</label>
+              <input type="text" class="form-control" id="editDepartment">
+            </div>
+            <div class="mb-3">
+              <label for="editTown" class="form-label">Ciudad</label>
+              <input type="text" class="form-control" id="editTown">
+            </div>
+            <div class="mb-3">
+              <label for="editImage" class="form-label">Imagen</label>
+              <input type="text" class="form-control" id="editImage">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <div class="container p-3">
 
   <div id="card-group" class="row">
