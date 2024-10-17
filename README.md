@@ -15,9 +15,6 @@ Este manual guía al usuario en el uso de la aplicación de gestión de automóv
 1. Ingese a la aplicación desde la [URL http://158.247.122.111:8080].
 
 ## Navegación por la Aplicación
-### Inicio de Sesión
-- **Cómo iniciar sesión:** Ingresa tu nombre de usuario y contraseña en la pantalla de inicio de sesión.
-- **Recuperar contraseña:** Haz clic en "¿Olvidaste tu contraseña?" y sigue los pasos para recuperar el acceso.
 
 ### Panel Principal
 - **Descripción:** En el panel principal encontrarás accesos directos a los modulos del aplicativo, allí tendra una breve descripcion de el concesionario y los carros.
@@ -31,16 +28,24 @@ Este manual guía al usuario en el uso de la aplicación de gestión de automóv
 
 ### Ver todos los Automoviles
 1. Ingresa al módulo de "Gestión de Automóviles".
-   
-### Buscar Automóvil
+
+![image](https://github.com/user-attachments/assets/e029fee7-21ec-432e-9d3b-f0fdb68620b3)
+
+### Buscar Automóvil por modelo
 1. Ingresa al módulo de "Coches".
 2. Usa la barra de búsqueda para ingresar el modelo del Coche.
 3. Haz clic en "Search" para ver los resultados.
+
+![image](https://github.com/user-attachments/assets/62ccff3d-e065-4c27-b925-4ea2b4457f42)
+
 
 ### Eliminar Automóvil
 1. Accede al lista de automóviles en el módulo de "Coches".
 2. Selecciona el automóvil que deseas eliminar.
 3. Haz clic en "Eliminar" y confirma la acción.
+
+![image](https://github.com/user-attachments/assets/b5aad4cc-eb29-47d0-81ff-f7f32bf50be0)
+
 
 ## Solución de Problemas
 ### Problemas Comunes
