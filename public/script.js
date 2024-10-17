@@ -1,24 +1,24 @@
-(()=>{
-  fetch('http://158.247.122.111:3000/car')
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      crearTarjetas(data.data);
-    })
-    .catch(err => console.log(err));
+(() => {
+  fetch('http://localhost:3000/car')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        crearTarjetas(data.data);
+      })
+      .catch(err => console.log(err));
 })();
 
 function crearTarjetas(lista) {
   const container = document.getElementById("card-group");
-  container.innerHTML = ''; 
+  container.innerHTML = '';
 
   lista.forEach(item => {
     const col = document.createElement('div');
-    col.className = 'col-12 col-sm-6 col-lg-3 mb-3'; 
+    col.className = 'col-12 col-sm-6 col-lg-3 mb-3';
 
     const card = document.createElement('div');
     card.className = 'card';
-    
+
     card.innerHTML = `
       <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marcador de posición: Capuchón de imagen" preserveAspectRatio="xMidYMid slice" focusable="false">
         <title>Placeholder</title>
@@ -39,4 +39,3 @@ function crearTarjetas(lista) {
     container.appendChild(col);
   });
 }
-

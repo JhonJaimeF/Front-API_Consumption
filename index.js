@@ -1,12 +1,25 @@
-const express = require('express')
-const path = require('path')
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+import carsRouter from './routes/cars.js';
 
-const app = express()
+dotenv.config();
 
-app.use(express.static(path.join(__dirname,'public')))
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.set('PORT',process.env.PORT || 2500 )
+const app = express();
 
-app.use('/',(req,res)=> res.sendFile(path.join(__dirname,'views/index.html')))
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(app.get('PORT'),()=>console.log(`Server Listen at Port ${app.get('PORT')}`))
+app.set('PORT', process.env.PORT || 2500);
+
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, './views/index.html')));
+app.get('/coches', (req, res) => res.sendFile(path.join(__dirname, './views/coches.html')));
+app.get('/registro', (req, res) => res.sendFile(path.join(__dirname, './views/Registrar.html')));
+app.get('/borrar', (req, res) => res.sendFile(path.join(__dirname, './views/Eliminar.html')));
+
+app.use('/cars', carsRouter);
+
+app.listen(app.get('PORT'), () => console.log(`Server Ready at http://localhost:${app.get('PORT')}`));
