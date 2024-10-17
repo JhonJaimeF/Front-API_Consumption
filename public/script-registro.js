@@ -65,13 +65,14 @@ document.querySelector('#btnSend').addEventListener('click', (event) => {
     const valueDepartment = document.querySelector('#departmentSelect').options[document.querySelector('#departmentSelect').selectedIndex].text;  
     const valueTown = document.querySelector('#townSelect').options[document.querySelector('#townSelect').selectedIndex].text;
     const idDealer = document.querySelector('#dealerSelect').value;
+    const linkImg = document.querySelector("#linkId").value;
   
-    const data = { model: model, plate: plate, department: valueDepartment, town: valueTown, dealer: idDealer };
+    const data = { model: model, plate: plate, department: valueDepartment, town: valueTown, dealer: idDealer, imag: linkImg };
 
     // Muestra los datos en la consola
-    //console.log(data);
+    console.log(data);
 
-    
+      
     fetch(`http://158.247.122.111:3000/car/${idDealer}`, {
         method: "POST",
         headers: {
@@ -88,5 +89,6 @@ document.querySelector('#btnSend').addEventListener('click', (event) => {
     })
     .then(res => alert("Datos guardados correctamente."))
     .catch(err => alert(`Error: ${err.message}`));
+    
     
 });
